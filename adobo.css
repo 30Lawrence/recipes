@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;600&display=swap');
+
+:root{
+    --primaryColor: #88B04B;
+    --backgroundColor: #EDEDED;
+    --logoColor: #A04D00;
+    --1sttextColor: #101010;
+    --2ndtextColor: #5a5a5a;
+}
+
+*{
+    text-decoration: none!important;
+    color: var(--1sttextColor) !important;
+    margin: 5px;
+    font-family: 'Inter';
+    border: px solid var(--1sttextColor);
+}
+
+body{
+    background: var(--backgroundColor);
+}
+
+section{
+    height: 10vh;
+}
+
+.ndBackground{
+    background-color: var(--backgroundColor);
+    width: 100%;
+    height: 130px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    position: absolute;
+    top: 82px;
+}
+
+.block{
+    background: var(--primaryColor);
+    width: 100%;
+    height: 100px;
+    z-index: -10;
+    position: absolute;
+}
+/*Navbar*/
+.logo{
+    color: var(--logoColor)!important;
+    font-weight: bold!important;
+    font-size: 25px;
+    position: relative;
+    left: 20px;
+    cursor: progress;
+}
+
+.navbar-nav{
+    display: flex;
+    position: absolute;
+    width: 250px;
+    right: 40px;
+    margin: 0;
+    margin-top: 5px;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.navbar{
+    background-color: var(--backgroundColor)!important;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    height: 80px;
+    z-index: 3;
+    font-weight: 600;
+}
+
+.navbar-toggler-icon{
+    background-color: var(--primaryColor)!important;
+    border-radius: 5px;
+    border: solid var(--primaryColor);
+}
+
+.navbar-toggler:focus{
+    box-shadow: var(--backgroundColor);
+}
+
+.navbar .nav-link{
+    background-color: var(--backgroundColor)!important;
+    border-radius: 5px;
+}
+
+
+
+/*Loader*/
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--backgroundColor);
+    z-index: 1;
+    transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader--hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after{
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid var(--logoColor);
+    border-top-color: var(--primaryColor);
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+    from { transform: rotate(0turn);}
+    to {transform: rotate(1turn)}
+}
+
+/*content page*/
+.content-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    top: 75em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.pork-adobo{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.squared{
+    width: auto;
+    height: 500px;
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 50px;
+    position: relative;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.titleDes{
+    width: 500px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    right: 3em;
+}
+
+.timesug{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 600px;
+    height: 20px;
+    position: relative;
+    top: 50px;
+    left: 20px;
+}
+
+.Prep, .servSug{
+    font-size: 25px;
+    font-weight: 600;
+    display: flex;
+}
+
+#prepList{
+    position: relative;
+    left: 2em;
+    font-size: 1.3rem;
+}
+
+h3{
+    position: relative;
+    left: 2.3rem;
+}
+
+img{
+    border-radius: 30px;
+}
+
+
+    @media only screen and (max-width: 768px) {
+        
+        section{
+            max-height: 1vh;
+        }
+
+        div.content-grid {
+          grid-template-columns: 1fr;
+          position: relative;
+          top: 37em;
+        }
+        .pork-adobo{
+            position: relative;
+            right: 5px;
+            bottom: 10px;
+            border-radius: 0px;
+            width: 100s;
+        }
+        .ndAdobo{
+            width: 300px;
+            border-radius: 30px;
+            position: relative;
+            bottom: 2em;
+        }
+        .squared{
+            height: 190px;
+            border-radius: 20px;
+        }
+    
+        .titleDes{
+            position: relative;
+            left: 1em;
+            bottom: 8em;
+            width: 300px;
+        }
+        .title{
+            font-size: 1.3rem;
+        }
+    
+        p{
+            font-size: .7rem;
+            width: 320px;
+        }
+        .timesug{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 300px;
+            position: absolute;
+            left: 25px;
+            bottom: 100em;
+            height: 50px;
+        }
+        
+        .Prep, .servSug{
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+        }
+        
+        #prepList{
+            position: absolute;
+            right: 8em;
+            top: 1.3em;
+            font-size: 1rem;
+        }
+        
+        h3{
+            position: absolute;
+            top: 30px;
+            left: 12em;
+            font-size: 15px;
+        }
+    
+        .ingredients{
+            position: relative;
+            bottom: 2em ;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .list{
+            font-size: .5rem;
+            width: 300px;
+            position: relative;
+            bottom: 4em;
+            right: 2.5em;
+        }
+
+        .inst{
+            position: relative;
+            bottom: .5em;
+        }
+
+        .instructions{
+            position: relative;
+            bottom: 1.6em;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            display: none;
+        }
+
+        
+    
+      }
+
+
+/*ScrollBar */
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background: #7a7a7a60;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #333333;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    box-shadow: 0 0 100px 2px #07070769;
+}
+
+/*footer*/
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: var(--primaryColor);
+    color: var(--1sttextColor);
+    position: relative;
+    top: 75em;
+    margin: 0;
+    padding: 0;
+  }
