@@ -184,11 +184,16 @@ h1{
     position: relative;
     left: 2em;
     font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--2ndtextColor) !important;
 }
 
 h3{
     position: relative;
     left: 2.3rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--2ndtextColor) !important;
 }
 
 img{
