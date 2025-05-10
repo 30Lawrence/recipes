@@ -304,7 +304,7 @@ void sendWifiList(WiFiClient& client) {
     client.print(String(scan_results[i].rssi));
     client.print(" dBm</td><td>");
     client.print(String(scan_results[i].channel >= 36 ? "5GHz" : "2.4GHz"));
-    client.print("</td><td>");
+    client.print("</td><td>"); 
     client.print("<input type='checkbox' id='network");
     client.print(i);
     client.print("' onclick='toggleSelection(");
