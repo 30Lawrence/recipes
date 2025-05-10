@@ -1,0 +1,37 @@
+name: Build for BW16
+
+on:
+  push:
+    paths:
+      - '**.ino'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Set up Arduino CLI
+      uses: arduino/setup-arduino-cli@v1
+      with:
+        version: 0.32.2
+
+    - name: Install Ameba board
+      run: |
+        arduino-cli config init
+        arduino-cli config add board_manager.additional_urls https://github.com/ambiot/ambd_arduino/raw/master/Arduino_package/package_realtek.com_amebad_index.json
+        arduino-cli core update-index
+        arduino-cli core install realtek:AmebaD
+
+    - name: Compile Sketch
+      run: |
+        mkdir -p build
+        arduino-cli compile --fqbn realtek:AmebaD:Generic main.ino --output-dir build
+
+    - name: Upload .bin
+      uses: actions/upload-artifact@v3
+      with:
+        name: firmware-bin
+        path: build/*.bin
