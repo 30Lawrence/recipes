@@ -10,7 +10,7 @@
 #include "WiFiClient.h"
 #include "web.h"
 
-// LEDs:
+// LEDs: 
 //  Red: System usable, Web server active etc.
 //  Green: Web Server communication happening
 //  Blue: Deauth-Frame being sent
